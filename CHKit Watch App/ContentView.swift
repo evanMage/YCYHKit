@@ -22,9 +22,9 @@ struct ContentView: View {
                     .border(.red)
             }
         }
-        .onAppear(perform: {
-            watchConnectivityManager.activateWCSession()
-        })
+//        .onAppear(perform: {
+//            watchConnectivityManager.activateWCSession()
+//        })
     }
 }
 

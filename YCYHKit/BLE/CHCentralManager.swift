@@ -82,11 +82,9 @@ extension CHCentralManager: CBPeripheralDelegate {
             guard let notifyBlock = notifyDcit[characteristic.uuid.uuidString] as? ((_ peripheral: CBPeripheral, _ characteristic: CBCharacteristic, _ error: Error?) -> Void) else {
                 return
             }
-            debugPrint("iOS 特征值监听返回  ------------ \(characteristic.uuid.uuidString)")
             notifyBlock(peripheral, characteristic, error)
 //            return
         }
-        debugPrint("iOS 读取成功  ------------ \(characteristic.uuid.uuidString)")
         callback?.readValueForCharacteristicBlock?(peripheral, characteristic, error)
     }
     /// 发现Characteristics的Descriptors

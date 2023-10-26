@@ -1,6 +1,5 @@
 //
 //  WatchConnectivityManager.swift
-//  SyaiWatch Watch App
 //
 //  Created by evan on 2023/10/18.
 //

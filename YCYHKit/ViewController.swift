@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         let data: Array<Double> = {
             var data: [Double] = []
             for _ in 0...50 {
-                data.append(Double.random(in: 1...20))
+                data.append(Double.random(in: 0...20))
             }
             return data
         }()
