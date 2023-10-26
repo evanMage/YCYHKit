@@ -1,2 +1,2 @@
 # YCYHKit
-watchKit、ChartView、iWatch app demo
+it's BLE、watchKit、ChartView、iWatch app demo
