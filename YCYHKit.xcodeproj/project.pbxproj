@@ -22,6 +22,9 @@
 		5B6054B72AEA18C500D542A2 /* CHWatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6054B62AEA18C500D542A2 /* CHWatchConnectivityManager.swift */; };
 		5B6054B92AEA1A0C00D542A2 /* CHCoreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6054B82AEA1A0C00D542A2 /* CHCoreInfo.swift */; };
 		5B6054BA2AEA1A0C00D542A2 /* CHCoreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6054B82AEA1A0C00D542A2 /* CHCoreInfo.swift */; };
+		5B6054BF2AEA583E00D542A2 /* CHCentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6054BC2AEA583E00D542A2 /* CHCentralManager.swift */; };
+		5B6054C02AEA583E00D542A2 /* CHCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6054BD2AEA583E00D542A2 /* CHCallback.swift */; };
+		5B6054C12AEA583E00D542A2 /* CHBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6054BE2AEA583E00D542A2 /* CHBluetooth.swift */; };
 		5BC221A129A8A3AB00E87F8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC221A029A8A3AB00E87F8A /* AppDelegate.swift */; };
 		5BC221A329A8A3AB00E87F8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC221A229A8A3AB00E87F8A /* SceneDelegate.swift */; };
 		5BC221A529A8A3AB00E87F8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC221A429A8A3AB00E87F8A /* ViewController.swift */; };
@@ -83,6 +86,9 @@
 		5B6054B32AEA14B700D542A2 /* CHConnecttivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHConnecttivityManager.swift; sourceTree = "<group>"; };
 		5B6054B62AEA18C500D542A2 /* CHWatchConnectivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHWatchConnectivityManager.swift; sourceTree = "<group>"; };
 		5B6054B82AEA1A0C00D542A2 /* CHCoreInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHCoreInfo.swift; sourceTree = "<group>"; };
+		5B6054BC2AEA583E00D542A2 /* CHCentralManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHCentralManager.swift; sourceTree = "<group>"; };
+		5B6054BD2AEA583E00D542A2 /* CHCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHCallback.swift; sourceTree = "<group>"; };
+		5B6054BE2AEA583E00D542A2 /* CHBluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHBluetooth.swift; sourceTree = "<group>"; };
 		5BC2219D29A8A3AB00E87F8A /* YCYHKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YCYHKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC221A029A8A3AB00E87F8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BC221A229A8A3AB00E87F8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +183,16 @@
 			path = Class;
 			sourceTree = "<group>";
 		};
+		5B6054BB2AEA583E00D542A2 /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				5B6054BE2AEA583E00D542A2 /* CHBluetooth.swift */,
+				5B6054BC2AEA583E00D542A2 /* CHCentralManager.swift */,
+				5B6054BD2AEA583E00D542A2 /* CHCallback.swift */,
+			);
+			path = BLE;
+			sourceTree = "<group>";
+		};
 		5BC2219429A8A3AB00E87F8A = {
 			isa = PBXGroup;
 			children = (
@@ -202,8 +218,9 @@
 		5BC2219F29A8A3AB00E87F8A /* YCYHKit */ = {
 			isa = PBXGroup;
 			children = (
-				5B6054B22AEA148E00D542A2 /* Core */,
+				5B6054BB2AEA583E00D542A2 /* BLE */,
 				5B6054922AEA123A00D542A2 /* LineChart */,
+				5B6054B22AEA148E00D542A2 /* Core */,
 				5BC221A029A8A3AB00E87F8A /* AppDelegate.swift */,
 				5BC221A229A8A3AB00E87F8A /* SceneDelegate.swift */,
 				5BC221A429A8A3AB00E87F8A /* ViewController.swift */,
@@ -412,9 +429,12 @@
 				5B6054972AEA123A00D542A2 /* CHCircleView.swift in Sources */,
 				5B6054982AEA123A00D542A2 /* CHCoreDataProtocol.swift in Sources */,
 				5BC221A529A8A3AB00E87F8A /* ViewController.swift in Sources */,
+				5B6054C12AEA583E00D542A2 /* CHBluetooth.swift in Sources */,
 				5B6054B92AEA1A0C00D542A2 /* CHCoreInfo.swift in Sources */,
+				5B6054BF2AEA583E00D542A2 /* CHCentralManager.swift in Sources */,
 				5B6054B42AEA14B700D542A2 /* CHConnecttivityManager.swift in Sources */,
 				5B6054962AEA123A00D542A2 /* CHLineChart.swift in Sources */,
+				5B6054C02AEA583E00D542A2 /* CHCallback.swift in Sources */,
 				5BC221A129A8A3AB00E87F8A /* AppDelegate.swift in Sources */,
 				5BC221A329A8A3AB00E87F8A /* SceneDelegate.swift in Sources */,
 			);

@@ -17,7 +17,7 @@ struct ContentView: View {
             if coreInfo.userInfo.isEmpty {
                 Text("请登录手机端")
             } else {
-                CHLineChart(data: coreInfo.data, dataRange: [0, 20], size: CGSize(width: 150, height: 80), visualType: .outline(color: .blue, lineWidth: 2), showCricle: true)
+                CHLineChart(data: coreInfo.data, dataRange: [0, 20], size: CGSize(width: 180, height: 80), visualType: .outline(color: .blue, lineWidth: 2), showCricle: true)
                     .frame(width: 180, height: 80)
                     .border(.red)
             }
