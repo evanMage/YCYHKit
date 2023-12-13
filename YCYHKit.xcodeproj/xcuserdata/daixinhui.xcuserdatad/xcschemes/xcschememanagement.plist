@@ -7,12 +7,35 @@
 		<key>CHKit Watch App.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<key>YCYHKit.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>5B60549C2AEA135A00D542A2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5BC2219C29A8A3AB00E87F8A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5BC221B229A8A3AC00E87F8A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5BC221BC29A8A3AC00E87F8A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

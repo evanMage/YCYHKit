@@ -25,6 +25,7 @@
 		5B6054BF2AEA583E00D542A2 /* CHCentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6054BC2AEA583E00D542A2 /* CHCentralManager.swift */; };
 		5B6054C02AEA583E00D542A2 /* CHCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6054BD2AEA583E00D542A2 /* CHCallback.swift */; };
 		5B6054C12AEA583E00D542A2 /* CHBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6054BE2AEA583E00D542A2 /* CHBluetooth.swift */; };
+		5BAF27B42B05FFCD008449DC /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5BAF27B32B05FFCD008449DC /* SF-Pro-Rounded-Bold.otf */; };
 		5BC221A129A8A3AB00E87F8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC221A029A8A3AB00E87F8A /* AppDelegate.swift */; };
 		5BC221A329A8A3AB00E87F8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC221A229A8A3AB00E87F8A /* SceneDelegate.swift */; };
 		5BC221A529A8A3AB00E87F8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC221A429A8A3AB00E87F8A /* ViewController.swift */; };
@@ -89,6 +90,8 @@
 		5B6054BC2AEA583E00D542A2 /* CHCentralManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHCentralManager.swift; sourceTree = "<group>"; };
 		5B6054BD2AEA583E00D542A2 /* CHCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHCallback.swift; sourceTree = "<group>"; };
 		5B6054BE2AEA583E00D542A2 /* CHBluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHBluetooth.swift; sourceTree = "<group>"; };
+		5BAF27B22B05FF95008449DC /* CHKit-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CHKit-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5BAF27B32B05FFCD008449DC /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
 		5BC2219D29A8A3AB00E87F8A /* YCYHKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YCYHKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC221A029A8A3AB00E87F8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BC221A229A8A3AB00E87F8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +152,7 @@
 		5B60549E2AEA135A00D542A2 /* CHKit Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				5BAF27B22B05FF95008449DC /* CHKit-Watch-App-Info.plist */,
 				5B6054B52AEA176F00D542A2 /* Class */,
 				5B60549F2AEA135A00D542A2 /* CHKitApp.swift */,
 				5B6054A12AEA135A00D542A2 /* ContentView.swift */,
@@ -178,6 +182,7 @@
 		5B6054B52AEA176F00D542A2 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				5BAF27B32B05FFCD008449DC /* SF-Pro-Rounded-Bold.otf */,
 				5B6054B62AEA18C500D542A2 /* CHWatchConnectivityManager.swift */,
 			);
 			path = Class;
@@ -376,6 +381,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BAF27B42B05FFCD008449DC /* SF-Pro-Rounded-Bold.otf in Resources */,
 				5B6054A72AEA135B00D542A2 /* Preview Assets.xcassets in Resources */,
 				5B6054A42AEA135B00D542A2 /* Assets.xcassets in Resources */,
 			);
@@ -506,10 +512,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CHKit Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = VY8W9X22Y4;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "CHKit-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = CHKit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.evan.YCYHKit;
@@ -540,10 +548,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CHKit Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = VY8W9X22Y4;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "CHKit-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = CHKit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.evan.YCYHKit;
@@ -688,6 +698,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VY8W9X22Y4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YCYHKit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -719,6 +730,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VY8W9X22Y4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YCYHKit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

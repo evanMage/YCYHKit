@@ -49,23 +49,16 @@ struct CHLineChart: View, CHCoreDataProtocol {
     }
     
     var body: some View {
-        if showCricle {
-            ZStack {
-                chartView
-                    .rotationEffect(.degrees(180), anchor: .center)
-                    .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-//                    .drawingGroup()
-                if points.count > 0 {
-                    let lastPoint = points.last!
-                    CHCircleView(config: cricleConfig)
-                        .position(x: lastPoint.x, y: size.height - lastPoint.y)
-                }
-            }
-        } else {
+        ZStack {
             chartView
                 .rotationEffect(.degrees(180), anchor: .center)
                 .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-//                .drawingGroup()
+                .drawingGroup()
+            if showCricle, points.count > 0 {
+                let lastPoint = points.last!
+                CHCircleView(config: cricleConfig)
+                    .position(x: lastPoint.x, y: size.height - lastPoint.y)
+            }
         }
     }
     
@@ -77,7 +70,7 @@ struct CHLineChart: View, CHCoreDataProtocol {
         case .outline(let color, let lineWidth):
             return AnyView(
                 (lineType == .line ? linePath(points: points) : curvedPath(points: points))
-                    .stroke(color, style: StrokeStyle(lineWidth: lineWidth, lineJoin: .round))
+                    .stroke(color, style: StrokeStyle(lineWidth: lineWidth, lineCap: .round, lineJoin: .round))
             )
         case .filled(let color, let lineWidth):
             return AnyView(
@@ -85,7 +78,7 @@ struct CHLineChart: View, CHCoreDataProtocol {
                     pathGradient(points: points)
                         .fill(LinearGradient(gradient: .init(colors: [color.opacity(0.4), color.opacity(0.02)]), startPoint: .init(x: 0.5, y: 1), endPoint: .init(x: 0.5, y: 0)))
                     (lineType == .line ? linePath(points: points) : curvedPath(points: points))
-                        .stroke(color, style: StrokeStyle(lineWidth: lineWidth, lineJoin: .round))
+                        .stroke(color, style: StrokeStyle(lineWidth: lineWidth, lineCap: .round, lineJoin: .round))
                 }
             )
         case .customFilled(let color, let lineWidth, let fillGradient):
@@ -94,25 +87,25 @@ struct CHLineChart: View, CHCoreDataProtocol {
                     pathGradient(points: points)
                         .fill(fillGradient)
                     (lineType == .line ? linePath(points: points) : curvedPath(points: points))
-                        .stroke(color, style: StrokeStyle(lineWidth: lineWidth, lineJoin: .round))
+                        .stroke(color, style: StrokeStyle(lineWidth: lineWidth, lineCap: .round, lineJoin: .round))
                 }
             )
         }
     }
     
     private func linePath(points: [CGPoint]) -> Path {
-        let pointArray = nodeProcessing(points: points)
-        var path = Path()
-        for item in pointArray {
-            guard item.count > 1 else {
-                return path
+        Path({ path in
+            let pointArray = nodeProcessing(points: points)
+            for item in pointArray {
+                guard item.count > 1 else {
+                    return
+                }
+                path.move(to: item[0])
+                for point in item {
+                    path.addLine(to: point)
+                }
             }
-            path.move(to: item[0])
-            for point in item {
-                path.addLine(to: point)
-            }
-        }
-        return path
+        })
     }
     
     private func pathGradient(points: [CGPoint]) -> Path {
@@ -127,40 +120,39 @@ struct CHLineChart: View, CHCoreDataProtocol {
     }
     
     private func curvedPath(points: [CGPoint]) -> Path {
-        let pointArray = nodeProcessing(points: points)
-        func mid(_ point1: CGPoint, _ point2: CGPoint) -> CGPoint {
-            return CGPoint(x: (point1.x + point2.x) / 2, y:(point1.y + point2.y) / 2)
-        }
-        func control(_ point1: CGPoint, _ point2: CGPoint) -> CGPoint {
-            var controlPoint = mid(point1, point2)
-            let delta = abs(point2.y - controlPoint.y)
-            if point1.y < point2.y {
-                controlPoint.y += delta
-            } else if point1.y > point2.y {
-                controlPoint.y -= delta
+        Path({ path in
+            let pointArray = nodeProcessing(points: points)
+            func mid(_ point1: CGPoint, _ point2: CGPoint) -> CGPoint {
+                return CGPoint(x: (point1.x + point2.x) / 2, y:(point1.y + point2.y) / 2)
             }
-            return controlPoint
-        }
-        var path = Path()
-        for item in pointArray {
-            guard item.count > 1 else {
-                return path
+            func control(_ point1: CGPoint, _ point2: CGPoint) -> CGPoint {
+                var controlPoint = mid(point1, point2)
+                let delta = abs(point2.y - controlPoint.y)
+                if point1.y < point2.y {
+                    controlPoint.y += delta
+                } else if point1.y > point2.y {
+                    controlPoint.y -= delta
+                }
+                return controlPoint
             }
-            var startPoint = item[0]
-            path.move(to: startPoint)
-            guard points.count > 2 else {
-                path.addLine(to: item[1])
-                return path
+            for item in pointArray {
+                guard item.count > 1 else {
+                    return
+                }
+                var startPoint = item[0]
+                path.move(to: startPoint)
+                guard points.count > 2 else {
+                    path.addLine(to: item[1])
+                    return
+                }
+                for currentPoint in item {
+                    let midPoint = mid(startPoint, currentPoint)
+                    path.addQuadCurve(to: midPoint, control: control(midPoint, startPoint))
+                    path.addQuadCurve(to: currentPoint, control: control(midPoint, currentPoint))
+                    startPoint = currentPoint
+                }
             }
-            for index in 1 ..< item.count {
-                let currentPoint = item[index]
-                let midPoint = mid(startPoint, currentPoint)
-                path.addQuadCurve(to: midPoint, control: control(midPoint, startPoint))
-                path.addQuadCurve(to: currentPoint, control: control(midPoint, currentPoint))
-                startPoint = currentPoint
-            }
-        }
-        return path
+        })
     }
     
     private func nodeProcessing(points: [CGPoint]) -> [[CGPoint]] {
