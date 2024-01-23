@@ -50,6 +50,7 @@ class CHConnecttivityManager: NSObject {
 extension CHConnecttivityManager: WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        debugPrint("------ \(message)")
         didReceive?(message)
     }
     
