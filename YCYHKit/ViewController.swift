@@ -18,9 +18,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         let status = healthKitManager.authorizationStatus(.bloodGlucose)
         if status == .notDetermined || status == .sharingDenied {
-            healthKitManager.requestHealthKitAuthorization(toShare: [HKQuantityType(.bloodGlucose)], read: [HKQuantityType(.bloodGlucose)]) { success, error in
-                debugPrint("------权限--------- \(success) - \(error?.localizedDescription ?? "")")
-            }
+            debugPrint("未授权，请去“健康”打开权限")
+        }
+        healthKitManager.requestHealthKitAuthorization(toShare: [HKQuantityType(.bloodGlucose)], read: nil) { success, error in
+            debugPrint("------权限--------- \(success) - \(error?.localizedDescription ?? "")")
         }
     }
 
@@ -34,9 +35,9 @@ class ViewController: UIViewController {
 //        }()
 //        let send = CHCoreInfo.send(data, "123")
 //        connecttivityManager.updateApplicationContext(send)
-        let sample = healthKitManager.bloodGlucose(date: Date(), bloodGlucose: 8.1)
+        let sample = healthKitManager.bloodGlucose(date: Date(), bloodGlucose: 11)
         healthKitManager.save(sample) { success, error in
-            debugPrint("------写入成功--------- \(success) - \(error?.localizedDescription ?? "")")
+            debugPrint("------ 写入 - \(success) \(error?.localizedDescription ?? "")")
         }
     }
 }

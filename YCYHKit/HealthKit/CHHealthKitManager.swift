@@ -27,7 +27,7 @@ public class CHHealthKitManager: NSObject {
         return healthStore.authorizationStatus(for: type)
     }
     
-    /// 请求授权
+    /// 检测权限授权
     /// - Parameters:
     ///   - toShare: 写入权限
     ///   - read: 读取权限
@@ -38,7 +38,9 @@ public class CHHealthKitManager: NSObject {
             completion(false, NSError(domain: "", code: -999, userInfo: [NSLocalizedDescriptionKey: "系统低于8.0，请升级系统"]))
             return
         }
-        healthStore.requestAuthorization(toShare: toShare, read: read, completion: completion)
+        healthStore.requestAuthorization(toShare: toShare, read: read) { success, error in
+            completion(success, error)
+        }
     }
     
     /// 生成血糖HKObject
@@ -70,7 +72,7 @@ public class CHHealthKitManager: NSObject {
     ///   - object: HKObject
     ///   - completion: 完成回调
     /// - Returns: 无返回
-    func delete(_ object: HKObject, withCompletion completion: @escaping (Bool, Error?) -> Void) -> Void {
+    public func delete(_ object: HKObject, withCompletion completion: @escaping (Bool, Error?) -> Void) -> Void {
         healthStore.delete(object, withCompletion: completion)
     }
 }
