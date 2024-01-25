@@ -206,12 +206,4 @@ public class CHOptions {
     /// 发现特征值参数
     public var discoverWithCharacteristics: Array<CBUUID>?
     
-    init(scanForPeripheralsWithOptions: Dictionary<String, Any>? = nil, connectPeripheralWithOptions: Dictionary<String, Any>? = nil, scanForPeripheralsWithServices: Array<CBUUID>? = nil, discoverWithServices: Array<CBUUID>? = nil, discoverWithCharacteristics: Array<CBUUID>? = nil) {
-        self.scanForPeripheralsWithOptions = scanForPeripheralsWithOptions
-        self.connectPeripheralWithOptions = connectPeripheralWithOptions
-        self.scanForPeripheralsWithServices = scanForPeripheralsWithServices
-        self.discoverWithServices = discoverWithServices
-        self.discoverWithCharacteristics = discoverWithCharacteristics
-    }
-    
 }

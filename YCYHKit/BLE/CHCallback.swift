@@ -43,55 +43,36 @@ public typealias CHCancelPeripheralsConnectionBlock = ((_ centralManager: CBCent
 
 public class CHCallback: NSObject {
     
-    var centralManagerDidUpdateStateBlock: CHCentralManagerDidUpdateStateBlock?
+    public var centralManagerDidUpdateStateBlock: CHCentralManagerDidUpdateStateBlock?
     
-    var discoverPeripheralsBlock: CHDiscoverPeripheralsBlock?
+    public var discoverPeripheralsBlock: CHDiscoverPeripheralsBlock?
     
-    var connectedPeripheralBlock: CHConnectedPeripheralBlock?
+    public var connectedPeripheralBlock: CHConnectedPeripheralBlock?
     
-    var failToConnectBlock: CHFailToConnectBlock?
+    public var failToConnectBlock: CHFailToConnectBlock?
     
-    var disconnectBlock: CHDisconnectBlock?
+    public var disconnectBlock: CHDisconnectBlock?
     
-    var discoverServicesBlock: CHDiscoverServicesBlock?
+    public var discoverServicesBlock: CHDiscoverServicesBlock?
     
-    var discoverCharacteristicsBlock: CHDiscoverCharacteristicsBlock?
+    public var discoverCharacteristicsBlock: CHDiscoverCharacteristicsBlock?
     
-    var readValueForCharacteristicBlock: CHReadValueForCharacteristicBlock?
+    public var readValueForCharacteristicBlock: CHReadValueForCharacteristicBlock?
     
-    var discoverDescriptorsForCharacteristicBlock: CHDiscoverDescriptorsForCharacteristicBlock?
+    public var discoverDescriptorsForCharacteristicBlock: CHDiscoverDescriptorsForCharacteristicBlock?
     
-    var readValueForDescriptorsBlock: CHReadValueForDescriptorsBlock?
+    public var readValueForDescriptorsBlock: CHReadValueForDescriptorsBlock?
     
-    var didWriteValueForCharacteristicBlock: CHDidWriteValueForCharacteristicBlock?
+    public var didWriteValueForCharacteristicBlock: CHDidWriteValueForCharacteristicBlock?
     
-    var didWriteValueForDescriptorBlock: CHDidWriteValueForDescriptorBlock?
+    public var didWriteValueForDescriptorBlock: CHDidWriteValueForDescriptorBlock?
     
-    var didUpdateNotificationStateForCharacteristicBlock: CHDidUpdateNotificationStateForCharacteristicBlock?
+    public var didUpdateNotificationStateForCharacteristicBlock: CHDidUpdateNotificationStateForCharacteristicBlock?
     
-    var readRSSIBlock: CHReadRSSIBlock?
+    public var readRSSIBlock: CHReadRSSIBlock?
     
-    var cancelScanBlock: CHCancelScanBlock?
+    public var cancelScanBlock: CHCancelScanBlock?
     
-    var cancelPeripheralsConnectionBlock: CHCancelPeripheralsConnectionBlock?
-    
-    init(centralManagerDidUpdateStateBlock: CHCentralManagerDidUpdateStateBlock? = nil, discoverPeripheralsBlock: CHDiscoverPeripheralsBlock? = nil, connectedPeripheralBlock: CHConnectedPeripheralBlock? = nil, failToConnectBlock: CHFailToConnectBlock? = nil, disconnectBlock: CHDisconnectBlock? = nil, discoverServicesBlock: CHDiscoverServicesBlock? = nil, discoverCharacteristicsBlock: CHDiscoverCharacteristicsBlock? = nil, readValueForCharacteristicBlock: CHReadValueForCharacteristicBlock? = nil, discoverDescriptorsForCharacteristicBlock: CHDiscoverDescriptorsForCharacteristicBlock? = nil, readValueForDescriptorsBlock: CHReadValueForDescriptorsBlock? = nil, didWriteValueForCharacteristicBlock: CHDidWriteValueForCharacteristicBlock? = nil, didWriteValueForDescriptorBlock: CHDidWriteValueForDescriptorBlock? = nil, didUpdateNotificationStateForCharacteristicBlock: CHDidUpdateNotificationStateForCharacteristicBlock? = nil, readRSSIBlock: CHReadRSSIBlock? = nil, cancelScanBlock: CHCancelScanBlock? = nil, cancelPeripheralsConnectionBlock: CHCancelPeripheralsConnectionBlock? = nil) {
-        self.centralManagerDidUpdateStateBlock = centralManagerDidUpdateStateBlock
-        self.discoverPeripheralsBlock = discoverPeripheralsBlock
-        self.connectedPeripheralBlock = connectedPeripheralBlock
-        self.failToConnectBlock = failToConnectBlock
-        self.disconnectBlock = disconnectBlock
-        self.discoverServicesBlock = discoverServicesBlock
-        self.discoverCharacteristicsBlock = discoverCharacteristicsBlock
-        self.readValueForCharacteristicBlock = readValueForCharacteristicBlock
-        self.discoverDescriptorsForCharacteristicBlock = discoverDescriptorsForCharacteristicBlock
-        self.readValueForDescriptorsBlock = readValueForDescriptorsBlock
-        self.didWriteValueForCharacteristicBlock = didWriteValueForCharacteristicBlock
-        self.didWriteValueForDescriptorBlock = didWriteValueForDescriptorBlock
-        self.didUpdateNotificationStateForCharacteristicBlock = didUpdateNotificationStateForCharacteristicBlock
-        self.readRSSIBlock = readRSSIBlock
-        self.cancelScanBlock = cancelScanBlock
-        self.cancelPeripheralsConnectionBlock = cancelPeripheralsConnectionBlock
-    }
+    public var cancelPeripheralsConnectionBlock: CHCancelPeripheralsConnectionBlock?
     
 }
