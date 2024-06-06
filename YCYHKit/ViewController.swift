@@ -10,15 +10,20 @@ import HealthKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var textField: UITextField!
     lazy var connecttivityManager = CHConnecttivityManager()
     lazy var healthKitManager = CHHealthKitManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         let status = healthKitManager.authorizationStatus(.bloodGlucose)
-        if status == .notDetermined || status == .sharingDenied {
-            debugPrint("未授权，请去“健康”打开权限")
+        if status == .sharingDenied {
+            debugPrint("未授权，请去“设置 - 隐私安全 - 健康”打开相关权限")
         }
         healthKitManager.requestHealthKitAuthorization(toShare: [HKQuantityType(.bloodGlucose)], read: nil) { success, error in
             debugPrint("------权限--------- \(success) - \(error?.localizedDescription ?? "")")
@@ -35,8 +40,11 @@ class ViewController: UIViewController {
 //        }()
 //        let send = CHCoreInfo.send(data, "123")
 //        connecttivityManager.updateApplicationContext(send)
-        let sample = healthKitManager.bloodGlucose(date: Date(), bloodGlucose: 11)
-        healthKitManager.save(sample) { success, error in
+        textField.resignFirstResponder()
+        guard let glucose = Double(textField.text ?? "") else {
+            return
+        }
+        healthKitManager.save(healthKitManager.bloodGlucose(date: Date(), bloodGlucose: glucose)) { success, error in
             debugPrint("------ 写入 - \(success) \(error?.localizedDescription ?? "")")
         }
     }

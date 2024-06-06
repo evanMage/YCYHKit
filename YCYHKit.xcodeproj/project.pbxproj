@@ -26,7 +26,14 @@
 		5B6054BF2AEA583E00D542A2 /* CHCentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6054BC2AEA583E00D542A2 /* CHCentralManager.swift */; };
 		5B6054C02AEA583E00D542A2 /* CHCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6054BD2AEA583E00D542A2 /* CHCallback.swift */; };
 		5B6054C12AEA583E00D542A2 /* CHBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6054BE2AEA583E00D542A2 /* CHBluetooth.swift */; };
-		5BAF27B42B05FFCD008449DC /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5BAF27B32B05FFCD008449DC /* SF-Pro-Rounded-Bold.otf */; };
+		5BA5F1712BF4650500F4FB4C /* ExtensionMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5F1702BF4650500F4FB4C /* ExtensionMethod.swift */; };
+		5BB40CD32BFF27AD009F3954 /* CHUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB40CD22BFF27AD009F3954 /* CHUserInfo.swift */; };
+		5BB40CD52BFF2909009F3954 /* CHWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB40CD42BFF2909009F3954 /* CHWorkManager.swift */; };
+		5BB40CD62BFF2DEF009F3954 /* CHBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6054BE2AEA583E00D542A2 /* CHBluetooth.swift */; };
+		5BB40CD72BFF2DEF009F3954 /* CHCentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6054BC2AEA583E00D542A2 /* CHCentralManager.swift */; };
+		5BB40CD82BFF2DEF009F3954 /* CHCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6054BD2AEA583E00D542A2 /* CHCallback.swift */; };
+		5BB40CD92BFF2F7D009F3954 /* ExtensionMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5F1702BF4650500F4FB4C /* ExtensionMethod.swift */; };
+		5BB40CE32C007161009F3954 /* SYEllipticCurveCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB40CE12C007161009F3954 /* SYEllipticCurveCrypto.m */; };
 		5BC221A129A8A3AB00E87F8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC221A029A8A3AB00E87F8A /* AppDelegate.swift */; };
 		5BC221A329A8A3AB00E87F8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC221A229A8A3AB00E87F8A /* SceneDelegate.swift */; };
 		5BC221A529A8A3AB00E87F8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC221A429A8A3AB00E87F8A /* ViewController.swift */; };
@@ -36,6 +43,12 @@
 		5BC221B829A8A3AC00E87F8A /* YCYHKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC221B729A8A3AC00E87F8A /* YCYHKitTests.swift */; };
 		5BC221C229A8A3AC00E87F8A /* YCYHKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC221C129A8A3AC00E87F8A /* YCYHKitUITests.swift */; };
 		5BC221C429A8A3AC00E87F8A /* YCYHKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC221C329A8A3AC00E87F8A /* YCYHKitUITestsLaunchTests.swift */; };
+		5BCB479C2BE9C26E00AE6053 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCB479B2BE9C26E00AE6053 /* WidgetKit.framework */; };
+		5BCB479E2BE9C26E00AE6053 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCB479D2BE9C26E00AE6053 /* SwiftUI.framework */; };
+		5BCB47A12BE9C26E00AE6053 /* iWatchWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCB47A02BE9C26E00AE6053 /* iWatchWidget.swift */; };
+		5BCB47A32BE9C26E00AE6053 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCB47A22BE9C26E00AE6053 /* AppIntent.swift */; };
+		5BCB47A52BE9C26F00AE6053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BCB47A42BE9C26F00AE6053 /* Assets.xcassets */; };
+		5BCB47A92BE9C26F00AE6053 /* iWatchWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5BCB47992BE9C26E00AE6053 /* iWatchWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +73,13 @@
 			remoteGlobalIDString = 5BC2219C29A8A3AB00E87F8A;
 			remoteInfo = YCYHKit;
 		};
+		5BCB47A72BE9C26F00AE6053 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BC2219529A8A3AB00E87F8A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BCB47982BE9C26E00AE6053;
+			remoteInfo = iWatchWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,6 +92,17 @@
 				5B6054AA2AEA135B00D542A2 /* CHKit Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCB47AA2BE9C27000AE6053 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5BCB47A92BE9C26F00AE6053 /* iWatchWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -93,8 +124,13 @@
 		5B6054BC2AEA583E00D542A2 /* CHCentralManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHCentralManager.swift; sourceTree = "<group>"; };
 		5B6054BD2AEA583E00D542A2 /* CHCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHCallback.swift; sourceTree = "<group>"; };
 		5B6054BE2AEA583E00D542A2 /* CHBluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHBluetooth.swift; sourceTree = "<group>"; };
+		5BA5F1702BF4650500F4FB4C /* ExtensionMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionMethod.swift; sourceTree = "<group>"; };
 		5BAF27B22B05FF95008449DC /* CHKit-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CHKit-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
-		5BAF27B32B05FFCD008449DC /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
+		5BB40CD22BFF27AD009F3954 /* CHUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHUserInfo.swift; sourceTree = "<group>"; };
+		5BB40CD42BFF2909009F3954 /* CHWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHWorkManager.swift; sourceTree = "<group>"; };
+		5BB40CDA2C007112009F3954 /* CHKit Watch App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CHKit Watch App-Bridging-Header.h"; sourceTree = "<group>"; };
+		5BB40CE12C007161009F3954 /* SYEllipticCurveCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYEllipticCurveCrypto.m; sourceTree = "<group>"; };
+		5BB40CE22C007161009F3954 /* SYEllipticCurveCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYEllipticCurveCrypto.h; sourceTree = "<group>"; };
 		5BC2219D29A8A3AB00E87F8A /* YCYHKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YCYHKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC221A029A8A3AB00E87F8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BC221A229A8A3AB00E87F8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +144,13 @@
 		5BC221BD29A8A3AC00E87F8A /* YCYHKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YCYHKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC221C129A8A3AC00E87F8A /* YCYHKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YCYHKitUITests.swift; sourceTree = "<group>"; };
 		5BC221C329A8A3AC00E87F8A /* YCYHKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YCYHKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5BCB47992BE9C26E00AE6053 /* iWatchWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iWatchWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BCB479B2BE9C26E00AE6053 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		5BCB479D2BE9C26E00AE6053 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		5BCB47A02BE9C26E00AE6053 /* iWatchWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iWatchWidget.swift; sourceTree = "<group>"; };
+		5BCB47A22BE9C26E00AE6053 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		5BCB47A42BE9C26F00AE6053 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5BCB47A62BE9C26F00AE6053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +179,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCB47962BE9C26E00AE6053 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BCB479E2BE9C26E00AE6053 /* SwiftUI.framework in Frameworks */,
+				5BCB479C2BE9C26E00AE6053 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +221,7 @@
 				5B6054A12AEA135A00D542A2 /* ContentView.swift */,
 				5B6054A32AEA135B00D542A2 /* Assets.xcassets */,
 				5B6054A52AEA135B00D542A2 /* Preview Content */,
+				5BB40CDA2C007112009F3954 /* CHKit Watch App-Bridging-Header.h */,
 			);
 			path = "CHKit Watch App";
 			sourceTree = "<group>";
@@ -186,6 +239,7 @@
 			children = (
 				5B6054B32AEA14B700D542A2 /* CHConnecttivityManager.swift */,
 				5B6054B82AEA1A0C00D542A2 /* CHCoreInfo.swift */,
+				5BA5F1702BF4650500F4FB4C /* ExtensionMethod.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -193,8 +247,11 @@
 		5B6054B52AEA176F00D542A2 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				5BAF27B32B05FFCD008449DC /* SF-Pro-Rounded-Bold.otf */,
+				5BB40CE22C007161009F3954 /* SYEllipticCurveCrypto.h */,
+				5BB40CE12C007161009F3954 /* SYEllipticCurveCrypto.m */,
 				5B6054B62AEA18C500D542A2 /* CHWatchConnectivityManager.swift */,
+				5BB40CD22BFF27AD009F3954 /* CHUserInfo.swift */,
+				5BB40CD42BFF2909009F3954 /* CHWorkManager.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -216,6 +273,8 @@
 				5BC221B629A8A3AC00E87F8A /* YCYHKitTests */,
 				5BC221C029A8A3AC00E87F8A /* YCYHKitUITests */,
 				5B60549E2AEA135A00D542A2 /* CHKit Watch App */,
+				5BCB479F2BE9C26E00AE6053 /* iWatchWidget */,
+				5BCB479A2BE9C26E00AE6053 /* Frameworks */,
 				5BC2219E29A8A3AB00E87F8A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -227,6 +286,7 @@
 				5BC221B329A8A3AC00E87F8A /* YCYHKitTests.xctest */,
 				5BC221BD29A8A3AC00E87F8A /* YCYHKitUITests.xctest */,
 				5B60549D2AEA135A00D542A2 /* CHKit Watch App.app */,
+				5BCB47992BE9C26E00AE6053 /* iWatchWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -267,6 +327,26 @@
 			path = YCYHKitUITests;
 			sourceTree = "<group>";
 		};
+		5BCB479A2BE9C26E00AE6053 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BCB479B2BE9C26E00AE6053 /* WidgetKit.framework */,
+				5BCB479D2BE9C26E00AE6053 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5BCB479F2BE9C26E00AE6053 /* iWatchWidget */ = {
+			isa = PBXGroup;
+			children = (
+				5BCB47A02BE9C26E00AE6053 /* iWatchWidget.swift */,
+				5BCB47A22BE9C26E00AE6053 /* AppIntent.swift */,
+				5BCB47A42BE9C26F00AE6053 /* Assets.xcassets */,
+				5BCB47A62BE9C26F00AE6053 /* Info.plist */,
+			);
+			path = iWatchWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -277,10 +357,12 @@
 				5B6054992AEA135A00D542A2 /* Sources */,
 				5B60549A2AEA135A00D542A2 /* Frameworks */,
 				5B60549B2AEA135A00D542A2 /* Resources */,
+				5BCB47AA2BE9C27000AE6053 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5BCB47A82BE9C26F00AE6053 /* PBXTargetDependency */,
 			);
 			name = "CHKit Watch App";
 			productName = "CHKit Watch App";
@@ -342,6 +424,23 @@
 			productReference = 5BC221BD29A8A3AC00E87F8A /* YCYHKitUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		5BCB47982BE9C26E00AE6053 /* iWatchWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BCB47AD2BE9C27000AE6053 /* Build configuration list for PBXNativeTarget "iWatchWidgetExtension" */;
+			buildPhases = (
+				5BCB47952BE9C26E00AE6053 /* Sources */,
+				5BCB47962BE9C26E00AE6053 /* Frameworks */,
+				5BCB47972BE9C26E00AE6053 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iWatchWidgetExtension;
+			productName = iWatchWidgetExtension;
+			productReference = 5BCB47992BE9C26E00AE6053 /* iWatchWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -349,11 +448,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					5B60549C2AEA135A00D542A2 = {
 						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1540;
 					};
 					5BC2219C29A8A3AB00E87F8A = {
 						CreatedOnToolsVersion = 14.2;
@@ -365,6 +465,9 @@
 					5BC221BC29A8A3AC00E87F8A = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 5BC2219C29A8A3AB00E87F8A;
+					};
+					5BCB47982BE9C26E00AE6053 = {
+						CreatedOnToolsVersion = 15.2;
 					};
 				};
 			};
@@ -385,6 +488,7 @@
 				5BC221B229A8A3AC00E87F8A /* YCYHKitTests */,
 				5BC221BC29A8A3AC00E87F8A /* YCYHKitUITests */,
 				5B60549C2AEA135A00D542A2 /* CHKit Watch App */,
+				5BCB47982BE9C26E00AE6053 /* iWatchWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -394,7 +498,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BAF27B42B05FFCD008449DC /* SF-Pro-Rounded-Bold.otf in Resources */,
 				5B6054A72AEA135B00D542A2 /* Preview Assets.xcassets in Resources */,
 				5B6054A42AEA135B00D542A2 /* Assets.xcassets in Resources */,
 			);
@@ -424,6 +527,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BCB47972BE9C26E00AE6053 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BCB47A52BE9C26F00AE6053 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -431,12 +542,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BB40CD62BFF2DEF009F3954 /* CHBluetooth.swift in Sources */,
+				5BB40CD72BFF2DEF009F3954 /* CHCentralManager.swift in Sources */,
+				5BB40CD82BFF2DEF009F3954 /* CHCallback.swift in Sources */,
 				5B6054AF2AEA141500D542A2 /* CHCircleView.swift in Sources */,
+				5BB40CD52BFF2909009F3954 /* CHWorkManager.swift in Sources */,
+				5BB40CD32BFF27AD009F3954 /* CHUserInfo.swift in Sources */,
 				5B6054B12AEA141500D542A2 /* CHCoreDataProtocol.swift in Sources */,
 				5B6054B02AEA141500D542A2 /* CHLineChart.swift in Sources */,
+				5BB40CE32C007161009F3954 /* SYEllipticCurveCrypto.m in Sources */,
 				5B6054A22AEA135A00D542A2 /* ContentView.swift in Sources */,
 				5B6054B72AEA18C500D542A2 /* CHWatchConnectivityManager.swift in Sources */,
 				5B6054BA2AEA1A0C00D542A2 /* CHCoreInfo.swift in Sources */,
+				5BB40CD92BFF2F7D009F3954 /* ExtensionMethod.swift in Sources */,
 				5B6054A02AEA135A00D542A2 /* CHKitApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +573,7 @@
 				5B6054B42AEA14B700D542A2 /* CHConnecttivityManager.swift in Sources */,
 				5B6054962AEA123A00D542A2 /* CHLineChart.swift in Sources */,
 				5B6054C02AEA583E00D542A2 /* CHCallback.swift in Sources */,
+				5BA5F1712BF4650500F4FB4C /* ExtensionMethod.swift in Sources */,
 				5BC221A129A8A3AB00E87F8A /* AppDelegate.swift in Sources */,
 				5BC221A329A8A3AB00E87F8A /* SceneDelegate.swift in Sources */,
 			);
@@ -477,6 +596,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BCB47952BE9C26E00AE6053 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BCB47A12BE9C26E00AE6053 /* iWatchWidget.swift in Sources */,
+				5BCB47A32BE9C26E00AE6053 /* AppIntent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -494,6 +622,11 @@
 			isa = PBXTargetDependency;
 			target = 5BC2219C29A8A3AB00E87F8A /* YCYHKit */;
 			targetProxy = 5BC221BE29A8A3AC00E87F8A /* PBXContainerItemProxy */;
+		};
+		5BCB47A82BE9C26F00AE6053 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BCB47982BE9C26E00AE6053 /* iWatchWidgetExtension */;
+			targetProxy = 5BCB47A72BE9C26F00AE6053 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -520,9 +653,11 @@
 		5B6054AC2AEA135B00D542A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CHKit Watch App/Preview Content\"";
@@ -547,6 +682,8 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "CHKit Watch App/CHKit Watch App-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 9.0;
@@ -556,9 +693,11 @@
 		5B6054AD2AEA135B00D542A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CHKit Watch App/Preview Content\"";
@@ -582,6 +721,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "CHKit Watch App/CHKit Watch App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 9.0;
@@ -716,8 +856,8 @@
 				DEVELOPMENT_TEAM = VY8W9X22Y4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YCYHKit/Info.plist;
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "YCYHKit需要获取健康APP中的隐私数据";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "YCYHKit需要写入健康APP的隐私权限";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "应用需要获取健康APP中的隐私数据";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "应用需要写入健康APP的隐私权限";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -751,8 +891,8 @@
 				DEVELOPMENT_TEAM = VY8W9X22Y4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YCYHKit/Info.plist;
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "YCYHKit需要获取健康APP中的隐私数据";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "YCYHKit需要写入健康APP的隐私权限";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "应用需要获取健康APP中的隐私数据";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "应用需要写入健康APP的隐私权限";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -846,6 +986,75 @@
 			};
 			name = Release;
 		};
+		5BCB47AB2BE9C27000AE6053 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VY8W9X22Y4;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iWatchWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = iWatchWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evan.YCYHKit.watchkitapp.iWatchWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		5BCB47AC2BE9C27000AE6053 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VY8W9X22Y4;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iWatchWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = iWatchWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evan.YCYHKit.watchkitapp.iWatchWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -890,6 +1099,15 @@
 			buildConfigurations = (
 				5BC221CE29A8A3AC00E87F8A /* Debug */,
 				5BC221CF29A8A3AC00E87F8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BCB47AD2BE9C27000AE6053 /* Build configuration list for PBXNativeTarget "iWatchWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BCB47AB2BE9C27000AE6053 /* Debug */,
+				5BCB47AC2BE9C27000AE6053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

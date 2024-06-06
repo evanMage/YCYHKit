@@ -83,7 +83,7 @@ extension CHCentralManager: CBPeripheralDelegate {
                 return
             }
             notifyBlock(peripheral, characteristic, error)
-//            return
+            return
         }
         callback?.readValueForCharacteristicBlock?(peripheral, characteristic, error)
     }

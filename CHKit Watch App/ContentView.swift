@@ -26,9 +26,13 @@ struct ContentView: View {
                     .border(.red)
             }
         }
-//        .onAppear(perform: {
+        .onAppear(perform: {
 //            watchConnectivityManager.activateWCSession()
-//        })
+            let startData = 0.toData(byteCount: 2)
+            let countData = 10086.toData(byteCount: 2)
+            let value = startData + countData
+            print("-- \(startData.hexString) -- \(countData.hexString) -- \(value.hexString)")
+        })
     }
 }
 
