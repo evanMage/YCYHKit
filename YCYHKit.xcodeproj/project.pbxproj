@@ -34,6 +34,7 @@
 		5BB40CD82BFF2DEF009F3954 /* CHCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6054BD2AEA583E00D542A2 /* CHCallback.swift */; };
 		5BB40CD92BFF2F7D009F3954 /* ExtensionMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5F1702BF4650500F4FB4C /* ExtensionMethod.swift */; };
 		5BB40CE32C007161009F3954 /* SYEllipticCurveCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB40CE12C007161009F3954 /* SYEllipticCurveCrypto.m */; };
+		5BBAA3742C39439800704809 /* WiFiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAA3732C39439800704809 /* WiFiManager.swift */; };
 		5BC221A129A8A3AB00E87F8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC221A029A8A3AB00E87F8A /* AppDelegate.swift */; };
 		5BC221A329A8A3AB00E87F8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC221A229A8A3AB00E87F8A /* SceneDelegate.swift */; };
 		5BC221A529A8A3AB00E87F8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC221A429A8A3AB00E87F8A /* ViewController.swift */; };
@@ -94,6 +95,16 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BC0DEF52C20317C0093AE46 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5BCB47AA2BE9C27000AE6053 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -131,6 +142,7 @@
 		5BB40CDA2C007112009F3954 /* CHKit Watch App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CHKit Watch App-Bridging-Header.h"; sourceTree = "<group>"; };
 		5BB40CE12C007161009F3954 /* SYEllipticCurveCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYEllipticCurveCrypto.m; sourceTree = "<group>"; };
 		5BB40CE22C007161009F3954 /* SYEllipticCurveCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYEllipticCurveCrypto.h; sourceTree = "<group>"; };
+		5BBAA3732C39439800704809 /* WiFiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiManager.swift; sourceTree = "<group>"; };
 		5BC2219D29A8A3AB00E87F8A /* YCYHKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YCYHKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC221A029A8A3AB00E87F8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BC221A229A8A3AB00E87F8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -266,6 +278,14 @@
 			path = BLE;
 			sourceTree = "<group>";
 		};
+		5BBAA3722C39435000704809 /* WiFi */ = {
+			isa = PBXGroup;
+			children = (
+				5BBAA3732C39439800704809 /* WiFiManager.swift */,
+			);
+			path = WiFi;
+			sourceTree = "<group>";
+		};
 		5BC2219429A8A3AB00E87F8A = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				5B4D60462B5FC46F004299C8 /* YCYHKit.entitlements */,
+				5BBAA3722C39435000704809 /* WiFi */,
 				5B4D60472B61085D004299C8 /* HealthKit */,
 				5B6054BB2AEA583E00D542A2 /* BLE */,
 				5B6054922AEA123A00D542A2 /* LineChart */,
@@ -377,6 +398,7 @@
 				5BC2219A29A8A3AB00E87F8A /* Frameworks */,
 				5BC2219B29A8A3AB00E87F8A /* Resources */,
 				5B6054AE2AEA135B00D542A2 /* Embed Watch Content */,
+				5BC0DEF52C20317C0093AE46 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -448,7 +470,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					5B60549C2AEA135A00D542A2 = {
@@ -563,6 +585,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BBAA3742C39439800704809 /* WiFiManager.swift in Sources */,
 				5B6054972AEA123A00D542A2 /* CHCircleView.swift in Sources */,
 				5B4D60492B61089C004299C8 /* CHHealthKitManager.swift in Sources */,
 				5B6054982AEA123A00D542A2 /* CHCoreDataProtocol.swift in Sources */,
