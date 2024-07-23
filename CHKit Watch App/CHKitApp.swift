@@ -14,7 +14,8 @@ struct CHKit_Watch_AppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(watchConnectivityManager)
+            ContentView()
+                .environmentObject(watchConnectivityManager)
         }
     }
 }

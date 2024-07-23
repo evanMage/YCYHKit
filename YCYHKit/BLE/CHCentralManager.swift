@@ -2,7 +2,7 @@
 //  CHCentralManager.swift
 //  CHBluetooth
 //
-//  Created by evan on 2023/8/4.
+//  Created by evan on 2024/04/15.
 //
 
 import Foundation
@@ -12,6 +12,7 @@ import CoreBluetooth
 class CHCentralManager: NSObject {
     
     internal var centralManager: CBCentralManager!
+    internal var operationQueue = DispatchQueue(label: "CH_Dispatch_Queue", qos: .userInitiated)
     internal var options: CHOptions?
     internal var callback: CHCallback?
     internal var connectedPeripherals: Dictionary<String, CBPeripheral> = Dictionary()
@@ -23,9 +24,9 @@ class CHCentralManager: NSObject {
         super.init()
         let backgroundModes: Array<String> = Bundle.main.infoDictionary?["UIBackgroundModes"] as? Array<String> ?? []
         if backgroundModes.contains("bluetooth-central") {
-            centralManager = CBCentralManager(delegate: self, queue: nil, options: options)
+            centralManager = CBCentralManager(delegate: self, queue: operationQueue, options: options)
         } else {
-            centralManager = CBCentralManager(delegate: self, queue: nil)
+            centralManager = CBCentralManager(delegate: self, queue: operationQueue)
         }
     }
     
@@ -123,6 +124,11 @@ extension CHCentralManager {
         }
         discoverPeripherals.removeAll()
         centralManager.scanForPeripherals(withServices: services, options: options)
+    }
+    
+    /// 获取系统连接的蓝牙设备
+    public func retrieveConnectedPeripherals(_ services: [CBUUID]) -> Array<CBPeripheral> {
+        return centralManager.retrieveConnectedPeripherals(withServices: services)
     }
     
     /// 停止扫描设备

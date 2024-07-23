@@ -7,6 +7,7 @@
 
 import Foundation
 import HealthKit
+import CoreLocation
 
 public class CHHealthKitManager: NSObject {
     
@@ -74,5 +75,92 @@ public class CHHealthKitManager: NSObject {
     /// - Returns: 无返回
     public func delete(_ object: HKObject, withCompletion completion: @escaping (Bool, Error?) -> Void) -> Void {
         healthStore.delete(object, withCompletion: completion)
+    }
+    
+    public func readStepCount() -> Void {
+        guard let stepCountType = HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning) else { return }
+        let now = Date()
+        let startOfDay = Calendar.current.startOfDay(for: now)
+        let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: now, options: .strictStartDate)
+        
+        let query = HKStatisticsQuery(quantityType: stepCountType, quantitySamplePredicate: predicate, options: .cumulativeSum) { _, result, _ in
+            guard let result = result else {
+                print("Failed to fetch steps")
+                return
+            }
+            
+            let steps = result.sumQuantity()?.doubleValue(for: HKUnit.count()) ?? 0
+
+            print("Steps: \(steps)")
+        }
+        
+        healthStore.execute(query)
+    }
+    
+    /// 读取具体健身数据
+    /// - Parameter workoutActivityType: ActivityType
+    /// - Parameter limit: 默认返回全部
+    public func readSpecificWorkouts(_ workoutActivityType: HKWorkoutActivityType = .running, limit: Int = HKObjectQueryNoLimit, resultsHandler: @escaping (HKSampleQuery, [HKSample]?, (any Error)?) -> Void) -> Void {
+        let workoutType = HKObjectType.workoutType()
+        let predicate = HKQuery.predicateForWorkouts(with: workoutActivityType)
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
+        let query = HKSampleQuery(sampleType: workoutType, predicate: predicate, limit: limit, sortDescriptors: [sortDescriptor], resultsHandler: resultsHandler)
+        healthStore.execute(query)
+    }
+    
+    /// 读取心率
+    /// - Parameter workout: HKWorkout
+    public func readHeartRateSamples(workout: HKWorkout, resultsHandler: @escaping (HKSampleQuery, [HKSample]?, (any Error)?) -> Void) -> Void {
+        let heartRateType = HKObjectType.quantityType(forIdentifier: .heartRate)!
+        let predicate = HKQuery.predicateForSamples(withStart: workout.startDate, end: workout.endDate, options: .strictStartDate)
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
+        let query = HKSampleQuery(sampleType: heartRateType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: [sortDescriptor], resultsHandler: resultsHandler)
+        healthStore.execute(query)
+    }
+    
+    
+    /// 读取路线
+    /// - Parameter workout: HKWorkout
+    public func readWorkoutRoute(workout: HKWorkout, resultsHandler: @escaping (HKSampleQuery, [HKSample]?, (any Error)?) -> Void) -> Void {
+        let routeType = HKSeriesType.workoutRoute()
+        let predicate = HKQuery.predicateForObjects(from: workout)
+        let query = HKSampleQuery(sampleType: routeType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil, resultsHandler: resultsHandler)
+        healthStore.execute(query)
+    }
+    
+    /// 读取位置信息
+    /// - Parameter route: HKWorkoutRoute 路线信息
+    public func readLocations(route: HKWorkoutRoute, dataHandler: @escaping (HKWorkoutRouteQuery, [CLLocation]?, Bool, (any Error)?) -> Void) -> Void {
+        let query = HKWorkoutRouteQuery(route: route, dataHandler: dataHandler)
+        healthStore.execute(query)
+    }
+    
+    /// 根据位置信息计算配速
+    /// - Parameter locations: 位置信息
+    public func calculatePacePerMinute(locations: [CLLocation]) -> Void {
+        var previousLocation: CLLocation?
+        var totalDistance: CLLocationDistance = 0.0
+        var totalDuration: TimeInterval = 0.0
+        var minuteDistance: CLLocationDistance = 0.0
+        var minuteDuration: TimeInterval = 0.0
+
+        for location in locations {
+            if let previousLocation = previousLocation {
+                let distance = location.distance(from: previousLocation)
+                let duration = location.timestamp.timeIntervalSince(previousLocation.timestamp)
+                totalDistance += distance
+                totalDuration += duration
+                minuteDistance += distance
+                minuteDuration += duration
+
+                if minuteDuration >= 60 {
+                    let pace = minuteDistance / minuteDuration * 60
+                    print("Pace: \(pace) meters/minute at \(location.timestamp)")
+                    minuteDistance = 0
+                    minuteDuration = 0
+                }
+            }
+            previousLocation = location
+        }
     }
 }

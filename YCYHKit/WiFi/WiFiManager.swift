@@ -2,7 +2,7 @@
 //  WiFiManager.swift
 //  YCYHKit
 //
-//  Created by skraBgoDyhW on 2024/7/6.
+//  Created by evan on 2024/7/6.
 //
 
 import Foundation
@@ -31,7 +31,7 @@ class WiFiManager: NSObject {
         }
     }
     
-    func disconnectWiFi(ssid: String) -> Void {
+    func removeWiFi(ssid: String) -> Void {
         NEHotspotConfigurationManager.shared.removeConfiguration(forSSID: ssid)
     }
     
